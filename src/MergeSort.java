@@ -3,8 +3,8 @@ public class MergeSort {
     public static void main(String args[]){
         arr = new int[]{1,11,3,4,43,6,7,8};
         mergeSort(arr,0,arr.length-1);
-        for(int i: arr){
-            System.out.println(i);
+        for(int i=0 ; i< arr.length; i++){
+            System.out.println(arr[i]);
         }
     }
     static void mergeSort(int[] array, int l, int r) {
