@@ -1,38 +1,42 @@
 import java.util.Stack;
 
-public class MyQueue {
+class MyQueue{
     public static void main(String args[]){
-        SQueue queue = new SQueue();
-        queue.push(1);
-        queue.push(2);
-        System.out.println(queue.peek());  // returns 1
-        System.out.println(queue.poll()); // returns 1
-        System.out.println(queue.empty()); // returns false
+        Squeue q = new Squeue();
+        q.put(1);
+        System.out.println(q.poll());
+        q.put(2);
+        System.out.println(q.top());
+        q.put(3);
     }
-    static class SQueue{
+    static class Squeue{
         Stack<Integer> input;
         Stack<Integer> output;
-         SQueue(){
-             input = new Stack<>();
-             output = new Stack<>();
+        Squeue(){
+            input = new Stack<>();
+            output = new Stack<>();
         }
-        void push(int val){
-             input.push(val);
+        void put(int val){
+            input.push(val);
         }
         int poll(){
-             while(!input.empty()){
-                 output.push(input.pop());
-             }
-             return output.pop();
+            if(output.empty()){
+                while(!input.empty()){
+                    output.push(input.pop());
+                }
+            }
+            return output.pop();
         }
-        int peek(){
-            while(!input.empty()){
-                output.push(input.pop());
+        int top(){
+            if(output.empty()){
+                while(!input.empty()){
+                    output.push(input.pop());
+                }
             }
             return output.peek();
         }
-        boolean empty(){
-             return input.empty();
+        boolean isEmpty(){
+            return input.empty()&&output.empty();
         }
     }
 }

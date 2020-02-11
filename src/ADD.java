@@ -49,11 +49,11 @@ public class ADD {
                 node.val += l2.val;
                 l2 = l2.next;
             }
-            if(l1 != null || l2!= null || node.val >9){
+            if(l1 != null || l2 != null || node.val > 9){
                 node.next = new ListNode(0);
                 if(node.val > 9){
-                    node.next.val = 1;
                     node.val -= 10;
+                    node.next.val = 1;
                 }
             }
             node = node.next;

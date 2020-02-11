@@ -8,11 +8,11 @@ import java.util.HashMap;
  */
 public class Find_the_factor {
     public static void main(String args[]){
-        int n = 20;
-        int p = 7;
-        ArrayList<Integer> res = find(n);
+        long n = 20;
+        long p = 7;
+        ArrayList<Long> res = find(n);
         if(p < res.size()){         //if the index is smaller than the list size
-            System.out.println(res.get(p-1));  // print out
+            System.out.println(res.get((int)p-1));  // print out
         }else{
             System.out.println(0);
         }
@@ -23,9 +23,9 @@ public class Find_the_factor {
      * @param n: find all factors belong to n including itself
      * @return ArrayList res: contains all factors
      */
-    private static ArrayList find(int n){
-        ArrayList<Integer> res = new ArrayList<>();
-        for(int i=1 ; i <= n; i++){
+    private static ArrayList find(long n){
+        ArrayList<Long> res = new ArrayList<>();
+        for(long i=1 ; i <= n; i++){
             if(n %i == 0){
                 res.add(i);
             }

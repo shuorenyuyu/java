@@ -7,7 +7,7 @@ public class MergeSort {
             System.out.println(arr[i]);
         }
     }
-    static void mergeSort(int[] array, int l, int r) {
+    public static void mergeSort(int[] array, int l, int r) {
 
         if (l < r) {
             int m = (l + r) / 2;
@@ -24,7 +24,7 @@ public class MergeSort {
 
         while (left <= m || right <= r) {
             if (left <= m && right <= r) {
-                if (temp[ left ] <= temp[ right ]) {
+                if (temp[ left ] <= temp[ right ]){
                     array[ pos ] = temp[ left ];
                     left++;
                 } else {
