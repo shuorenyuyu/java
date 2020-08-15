@@ -1,3 +1,4 @@
+import com.sun.xml.internal.bind.v2.model.annotation.Quick;
 
 /*
 QuickSort
@@ -13,20 +14,20 @@ public class QuickSort {
     }
     private static void QuickSort(int[] arr, int l, int r){
         if(l < r){
-            int index  = quick(arr, l, r);
-            QuickSort(arr,l,index-1);
+            int index = quick(arr,l,r);
             QuickSort(arr,index+1,r);
+            QuickSort(arr,l,index-1);
         }
     }
     private static int quick(int[] arr, int l, int r){
-        int pivot = arr[r];
         int i = l-1;
-        for(int j=l ; j < r; j++){
+        int pivot = arr[r];
+        for(int j = l; j < r; j++){
             if(arr[j] < pivot){
                 i++;
-                int temp = arr[j];
-                arr[j] = arr[i];
-                arr[i] = temp;
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
             }
         }
         int temp = arr[r];

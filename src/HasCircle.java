@@ -1,8 +1,4 @@
-import java.io.*;
-import java.util.HashSet;
-import java.util.Stack;
-import java.util.HashMap;
-import java.util.Collections;
+
 public class HasCircle {
     public static void main(String args[]) {
         ListNode node = new ListNode(0);

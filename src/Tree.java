@@ -29,7 +29,6 @@ public class Tree {
         if(root.right != null){
             helper(root.right);
         }
-
         if(root.left != null){
             helper(root.left);
         }
