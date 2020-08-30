@@ -25,7 +25,11 @@ public class test {
         double timestamp;
         int value;
         String event;
-       // String stack;
+
+        public List(String command, Integer valueOf, Integer valueOf1, Double valueOf2, Integer valueOf3, String event) {
+        }
+
+        // String stack;
         void List(String command, int pid, int cpu, double timestamp, int value, String event){
             this.command = command;
             this.pid = pid;

@@ -34,26 +34,26 @@ public class ADD{
     }
     private static ListNode addTwoNumber(ListNode l1, ListNode l2){
         ListNode res = new ListNode(0);
-        ListNode head = res;
+        ListNode node = res;
         while(l1 != null || l2 != null){
             if(l1 != null){
-                head.val += l1.val;
+                node.val += l1.val;
                 l1 = l1.next;
             }
             if(l2 != null){
-                head.val += l2.val;
+                node.val += l2.val;
                 l2 = l2.next;
             }
-            if(l1 != null || l2 != null || head.val > 9){
-                head.next = new ListNode(0);
-                if(head.val > 9){
-                    head.val -= 10;
-                    head.next.val += 1;
+            if(l1 != null || l2 != null || node.val > 9){
+                node.next = new ListNode(0);
+                if( node.val > 9){
+                    node.val -= 10;
+                    node.next.val += 1;
                 }
             }
-            head = head.next;
+            node = node.next;
         }
-        return res;
+        return  res;
     }
    static class ListNode{
         int val;
