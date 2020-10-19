@@ -12,27 +12,27 @@ public class QuickSort {
             System.out.println(arr[i]);
         }
     }
-    private static void QuickSort(int[] arr, int l, int r){
+    static void QuickSort(int[] nums, int l, int r){
         if(l < r){
-            int index = quick(arr,l,r);
-            QuickSort(arr,index+1,r);
-            QuickSort(arr,l,index-1);
+            int index = quick(nums,l,r);
+            QuickSort(nums,index+1,r);
+            QuickSort(nums,l,index-1);
         }
     }
-    private static int quick(int[] arr, int l, int r){
+    static int quick(int[] nums,int l, int r){
         int i = l-1;
-        int pivot = arr[r];
-        for(int j = l; j < r; j++){
-            if(arr[j] < pivot){
+        int pivot = nums[r];
+        for(int j=l; j < r; j++){
+            if(nums[j] < pivot){
                 i++;
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
+                int temp = nums[j];
+                nums[j] = nums[i];
+                nums[i] = temp;
             }
         }
-        int temp = arr[r];
-        arr[r] = arr[i+1];
-        arr[i+1] = temp;
+        int temp = nums[r];
+        nums[r] = nums[i+1];
+        nums[i+1] = temp;
         return i+1;
     }
 }
